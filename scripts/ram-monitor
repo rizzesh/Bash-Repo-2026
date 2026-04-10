@@ -10,3 +10,16 @@ echo "Available RAM: $available_ram MB"
 # TODO: Convert the $available_ram output to Gigabytes (divide by 1024) and print it.
 # Extra Credit TODO: Calculate the percentage of used RAM, and print a warning if usage is over 80%.
 
+available_gb=$(awk "BEGIN {printf \"%.2f\", $available_ram / 1024}")
+echo "Available RAM: $available_gb GB"
+
+total_ram=$(free -m | awk '/^Mem:/{print $2}')
+used_ram=$(free -m | awk '/^Mem:/{print $3}')
+
+used_percent=$(( used_ram * 100 / total_ram ))
+
+echo "Current RAM Usage: ${used_percent}%"
+
+if [ "$used_percent" -gt 80 ]; then
+    echo " WARNING: RAM usage is critically high (over 80%)!"
+fi
