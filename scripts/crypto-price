@@ -12,8 +12,10 @@ API_URL="https://api.binance.com/api/v3/ticker/price?symbol=${SYMBOL}"
 
 echo "Fetching price for $COIN..."
 
+PRICE=$(curl -s "$API_URL" | grep -o '"price":"[^"]*"' | awk -F'"' '{printf "%.2f", $4}')
 # TODO: Use `curl -s` to fetch the JSON from $API_URL.
 # The JSON looks similar to: {"symbol":"BTCUSDT","price":"63000.00000000"}
 # Use `grep`, `sed`, `awk`, or `jq` (if installed) to extract just the exact price number.
 # Print the output in this format: "Current price of $COIN is: $X.XX"
 
+echo "Current price of $COIN is: \$$PRICE"
