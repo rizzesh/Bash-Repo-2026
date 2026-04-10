@@ -11,10 +11,10 @@ declare -A color_mapping=(
     ['red']=31
     ['green']=32
     ['blue']=34
-    # TODO: Add more color values to expand our theme!
-    # Refer to Bash color codes. For instance:
-    # ['yellow']=33
-    # ['cyan']=36
+    ['yellow']=33
+     ['cyan']=36
+     ['lime']=37
+     ['pink']=38
 )
 
 if [[ -z "$1" ]]; then
