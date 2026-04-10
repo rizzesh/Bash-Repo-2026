@@ -6,6 +6,7 @@
 declare -A quotes=(
     ['torvalds']="Talk is cheap. Show me the code."
     ['octocat']="Building the future of software together."
+    ['rizzesh']="Yokoso! watashi no soul society"
     # TODO: Add your GitHub handle as the key and your favorite quote as the value!
     # Follow the format above carefully: ['your_handle']="Your quote here."
 )
