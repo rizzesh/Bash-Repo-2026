@@ -22,7 +22,6 @@ BASENAME=$(basename "${TARGET_DIR}")
 # TODO: Get the current date & time (e.g., format like "2026-04-09") using the `date` command
 # Assign it to a variable called TIMESTAMP.
 TIMESTAMP="$(date +%Y-%m-%d)"
-
 # Combine elements to create output file name
 ARCHIVE_NAME="backup_${BASENAME}_${TIMESTAMP}.tar.gz"
 
