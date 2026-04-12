@@ -7,7 +7,7 @@
 # the default weather for the current IP. Add your logic to set `CITY=$1` if
 # `$1` is not empty, otherwise leave it blank.
 
-CITY=""
+CITY=$1
 
 # Fetching from wttr.in
 curl -s "wttr.in/${CITY}?0"
