@@ -9,7 +9,7 @@ THRESHOLD=90
 # Example starting point: 
 # USAGE=$(df -h / | awk 'NR==2 {print $5}')
 # Next, remove the '%' sign using `tr -d '%'` so you have a plain integer.
-USAGE=""
+USAGE=$(df -h / | awk 'NR==2 {print $5}' | tr -d '%')
 
 if [ -z "$USAGE" ]; then
     echo "Could not fetch disk usage, please implement the TODO!"
@@ -22,3 +22,8 @@ echo "Current root disk usage is at $USAGE%"
 # If it is, echo a "WARNING: Disk space low!" message.
 # If not, echo an "All good: Plenty of space." message.
 
+if [ "$USAGE" -ge "$THRESHOLD" ]; then
+    echo "WARNING: Disk space low!"
+else
+    echo "All good: Plenty of space."
+fi
