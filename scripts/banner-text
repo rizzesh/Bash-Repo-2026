@@ -10,7 +10,7 @@ TEXT="${1:-Welcome to FOSS Weekend}"
 # Then, write a loop or a clever command (like `printf` and `tr`) 
 # to create a border string composed of dashes ('-') that matches the exact length of the text.
 
-BORDER=""
+BORDER=$(printf "%${#TEXT}s" | tr ' ' '-')
 
 echo "$BORDER"
 echo "$TEXT"
