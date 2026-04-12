@@ -9,7 +9,12 @@ uname -o
 
 # TODO: Add two more commands after this comment:
 # 1. Print out the current username. You can use the `whoami` command.
+echo -n "Current User: "
+whoami
+
 # 2. Print out the current hostname of the machine. You can use the `hostname` or `uname -n` command.
+echo -n "Hostname: "
+hostname
 
 echo ""
 echo "--- End of Info ---"
