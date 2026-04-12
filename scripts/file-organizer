@@ -11,8 +11,13 @@ if [ ! -d "$DIR" ]; then
     exit 1
 fi
 
+mkdir -p "$DIR/Images"
+mkdir -p "$DIR/Documents"
+
 # TODO: Add logic to create an 'Images' folder inside $DIR and move all .jpg and .png files to it.
 # Then, create a 'Documents' folder and move all .txt and .pdf files.
 # Hint: use `mkdir -p` and `mv`.
+mv "$DIR"/*.jpg "$DIR"/*.png "$DIR/Images/" 2>/dev/null
+mv "$DIR"/*.txt "$DIR"/*.pdf "$DIR/Documents/" 2>/dev/null
 
 echo "Organization complete!"
